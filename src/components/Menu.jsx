@@ -61,6 +61,10 @@ const Logo = styled.div`
         cursor: pointer;
         padding: 7.5px 0px;
       
+
+        &:hover {
+            background-color: ${({theme}) => theme.soft}
+        }
     `
 
 
@@ -131,10 +135,13 @@ const Title = styled.h2`
         <Hr />
         <Login>
 
+<Link to = "/signin" style={{textDecoration: "none",color: 
+  "inherit"}}>
             <Button>
               <AccountCircleOutlined/>
               SIGN IN
             </Button>
+</Link>
          
         </Login>
         <Hr />

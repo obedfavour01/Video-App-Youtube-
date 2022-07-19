@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 
 const Container = styled.div`
-width: 360px;
+width: ${(props) => props.Type !== "sm" && "360px"};
 margin-bottom: ${(props) => props.Type === "sm" ? "10px" : "45px"};
 cursor: pointer;
 display: ${(props) => props.Type === "sm" && "flex"};
@@ -18,12 +18,14 @@ width: 100%;
  height : ${(props) => props.Type === "sm" ? "120px" : "202px"};
 background-color: #999;
 cursor: pointer;
+flex: 1;
 `
 
 const Details = styled.div`
   display: flex;
-  margin-top: 16px;
+  margin-top: ${(props) => props.Type !== "sm" && "16px"};
   gap: 12px;
+  flex:1;
 
 `
 
@@ -34,7 +36,7 @@ const ChannelImage = styled.img`
   background: #999;
   object-fit: cover;
   object-position: top left;
-
+  display : ${(props) => props.Type === 'sm' && "none"};
 `
 
 const Texts = styled.div``
@@ -51,7 +53,7 @@ const Texts = styled.div``
   `
   const Info = styled.div`
   color: ${({theme}) => theme.text};
-
+  font-size: 12px;
   `
 
 
@@ -62,12 +64,12 @@ const Cards = ({type}) => {
     <Container Type = {type}>
       <Image src= {card} Type = {type}/>
       <Details Type = {type}>
-        <ChannelImage src = {channelImage} />
+        <ChannelImage src = {channelImage} Type = {type}/>
 
         <Texts>
         <Title>Test Video</Title>
         <ChannelName>Pastey</ChannelName>
-        <Info>1,678,543 views <> &#183;</> 1 day ago</Info>
+        <Info>1.6M views <> &#183;</> 1 day ago</Info>
         </Texts>
       </Details>
     </Container>
