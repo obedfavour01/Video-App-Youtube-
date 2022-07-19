@@ -7,13 +7,15 @@ import { Link } from 'react-router-dom'
 
 const Container = styled.div`
 width: 360px;
-margin-bottom: 45px;
+margin-bottom: ${(props) => props.Type === "sm" ? "10px" : "45px"};
 cursor: pointer;
+display: ${(props) => props.Type === "sm" && "flex"};
+gap: 10px;
 `
 
 const Image = styled.img`
 width: 100%;
-height: 202px;
+ height : ${(props) => props.Type === "sm" ? "120px" : "202px"};
 background-color: #999;
 cursor: pointer;
 `
@@ -47,16 +49,19 @@ const Texts = styled.div``
   margin: 9px 0;
 
   `
-  const Info = styled.div``
+  const Info = styled.div`
+  color: ${({theme}) => theme.text};
+
+  `
 
 
-const Cards = () => {
+const Cards = ({type}) => {
   return (
     <Link to = '/video/test' style={{textDecoration: "none",color: 
     "inherit"}}>
-    <Container>
-      <Image src= {card}/>
-      <Details>
+    <Container Type = {type}>
+      <Image src= {card} Type = {type}/>
+      <Details Type = {type}>
         <ChannelImage src = {channelImage} />
 
         <Texts>

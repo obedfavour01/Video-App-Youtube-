@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Cards from '../components/Cards'
 import ReactPlayer from 'react-player'
 import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import ThumbDownAltIcon from '@mui/icons-material/ThumbDownAlt';
@@ -67,8 +68,9 @@ const ChannelInfo = styled.div`
 `
 
 const Image = styled.img`
-height: 36px;
-width: 36px;
+height: 50px;
+width: 50px;
+border-radius: 50%;
 object-fit: cover;
 `
   
@@ -153,7 +155,28 @@ const Video = () => {
 
       <Comments/>
       </Content>
-      <Recommendation>Recommendation</Recommendation>
+      <Recommendation>
+
+      <Cards type = "sm"/>
+      <Cards type = "sm"/>
+      <Cards type = "sm"/>
+      <Cards type = "sm"/>
+      <Cards type = "sm"/>
+      <Cards type = "sm"/>
+      <Cards type = "sm"/>
+      <Cards type = "sm"/>
+      <Cards type = "sm"/>
+      <Cards type = "sm"/>
+      <Cards type = "sm"/>
+      <Cards type = "sm"/>
+      <Cards type = "sm"/>
+      <Cards type = "sm"/>
+      <Cards type = "sm"/>
+      <Cards type = "sm"/>
+      <Cards type = "sm"/>
+      <Cards type = "sm"/>
+
+      </Recommendation>
     </Container>
   )
 }
